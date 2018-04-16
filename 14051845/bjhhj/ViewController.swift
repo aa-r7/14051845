@@ -16,25 +16,28 @@ protocol subviewDelegate {
 class ViewController: UIViewController, subviewDelegate {
     
     func changeSomething() {
-        
-
         collisionBehavior.addBoundary(withIdentifier: "barrier" as
             NSCopying, for: UIBezierPath(rect: carView0.frame))
-        collisionBehavior.removeAllBoundaries()
-
     }
     
     var collisionBehavior: UICollisionBehavior!
     var dynamicAnimator: UIDynamicAnimator!
     var dynamicItemBehavior: UIDynamicItemBehavior!
+    var dynamicBehavior: UIDynamicBehavior!
     
     @IBOutlet weak var roadImage: UIImageView!
     
     @IBOutlet weak var carView0: drag_car!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var fallcars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
+   
+
+    override func viewDidLoad() {
+        
+        
+        super.viewDidLoad()
+        carView0.myDelegate = self
 
         //road
         var imageArray: [UIImage]!
@@ -61,54 +64,70 @@ class ViewController: UIViewController, subviewDelegate {
         roadImage.image = UIImage.animatedImage(with: imageArray, duration: 1)
         
         
-
-            let randomNx = arc4random_uniform(201) + 40
-
-            var carView1 = UIImageView(image: nil)
-   
-            carView1.frame = CGRect(x: Int(randomNx), y: 50, width: 30, height: 50)
-
-            carView1.image = UIImage(named: "car1.png")
-       
-        self.view.addSubview(carView1)
-        
-        let randomNx1 = arc4random_uniform(201) + 40
-        
-        var carView2 = UIImageView(image: nil)
-        
-        carView2.frame = CGRect(x: Int(randomNx1), y: 50, width: 30, height: 50)
-        
-        carView2.image = UIImage(named: "car2.png")
-        
-        self.view.addSubview(carView2)
+        // Random Cars
+        for obstacle in 0...19{
+           let delay1 = Double(self.fallcars[obstacle])
+            let delay = DispatchTime.now() + delay1
+            DispatchQueue.main.asyncAfter(deadline: delay) {
+                let carColor = arc4random_uniform(6)
+                var RandomCar = UIImageView(image: nil)
+                switch carColor{
+                case 1 : RandomCar.image = UIImage(named: "car1.png")
+                case 2:  RandomCar.image = UIImage(named: "car2.png")
+                case 3 : RandomCar.image = UIImage(named: "car3.png")
+                case 4 : RandomCar.image = UIImage(named: "car4.png")
+                case 5 : RandomCar.image = UIImage(named: "car5.png")
+                    
+                default: RandomCar.image = UIImage(named: "car1.png")
+                }
                 
+                let randomNx2 = arc4random_uniform(201) + 40
+                RandomCar.frame = CGRect(x: Int(randomNx2), y: 0, width: 30, height: 50)
+                self.view.addSubview(RandomCar)
+                
+                self.view.bringSubview(toFront: RandomCar)
+                
+                
+                
+                //fall
+                let randomN2 = arc4random_uniform(75) + 200
+                let randomN3 = arc4random_uniform(75) + 200
+                
+                self.dynamicItemBehavior.addItem(RandomCar)
+                self.dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+                self.dynamicItemBehavior = UIDynamicItemBehavior(items: [RandomCar])
+                self.dynamicItemBehavior.addLinearVelocity(CGPoint(x: 0, y: 500), for: RandomCar)
+                
+                
+                //Collision
+                self.dynamicAnimator.addBehavior(self.dynamicItemBehavior)
+                self.collisionBehavior = UICollisionBehavior(items: [RandomCar])
+                self.collisionBehavior.translatesReferenceBoundsIntoBoundary = false
+                self.dynamicAnimator.addBehavior(self.collisionBehavior)
+                self.dynamicItemBehavior.elasticity = 0-1
+                }
+            
+        
+            dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+            
+            dynamicItemBehavior = UIDynamicItemBehavior(items: [])
+       
+            
+            
+            
+            dynamicAnimator.addBehavior(dynamicItemBehavior)
+            
+            
+            
+            collisionBehavior = UICollisionBehavior(items: [])
+            collisionBehavior.translatesReferenceBoundsIntoBoundary = false
+            dynamicAnimator.addBehavior(collisionBehavior)
         
         
-
-    
-        let randomN = arc4random_uniform(75) + 200
-        let randomN1 = arc4random_uniform(75) + 200
-
         
-        dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
-        
-        dynamicItemBehavior = UIDynamicItemBehavior(items: [carView1, carView2])
-        self.dynamicItemBehavior.addLinearVelocity(CGPoint(x: 0, y: Int(randomN)), for: carView1)
-        self.dynamicItemBehavior.addLinearVelocity(CGPoint(x: 0, y: Int(randomN1)), for: carView2)
-
-        
-        
-        dynamicAnimator.addBehavior(dynamicItemBehavior)
-        
-    
-        
-        collisionBehavior = UICollisionBehavior(items: [carView1, carView2, carView0 ])
-        collisionBehavior.translatesReferenceBoundsIntoBoundary = false
-        dynamicAnimator.addBehavior(collisionBehavior)
-        
-        collisionBehavior.removeAllBoundaries()
-
         }
+        
+    }
         
     
     
