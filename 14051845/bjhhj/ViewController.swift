@@ -55,8 +55,6 @@ class ViewController: UIViewController, subviewDelegate {
    
 
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
         carView0.myDelegate = self
 
@@ -94,15 +92,15 @@ class ViewController: UIViewController, subviewDelegate {
             let delay = DispatchTime.now() + delay1
             DispatchQueue.main.asyncAfter(deadline: delay) {
                 let carColor = arc4random_uniform(6)
-                var RandomCar = UIImageView(image: nil)
+                let RandomCar = UIImageView(image: nil)
                 switch carColor{
-                case 1 : RandomCar.image = UIImage(named: "car1.png")
-                case 2:  RandomCar.image = UIImage(named: "car2.png")
-                case 3 : RandomCar.image = UIImage(named: "car3.png")
-                case 4 : RandomCar.image = UIImage(named: "car4.png")
-                case 5 : RandomCar.image = UIImage(named: "car5.png")
+                case 1 : RandomCar.image = UIImage(named: "car1")
+                case 2:  RandomCar.image = UIImage(named: "car2")
+                case 3 : RandomCar.image = UIImage(named: "car3")
+                case 4 : RandomCar.image = UIImage(named: "car4")
+                case 5 : RandomCar.image = UIImage(named: "car5")
                     
-                default: RandomCar.image = UIImage(named: "car1.png")
+                default: RandomCar.image = UIImage(named: "car1")
                 }
                 
                 let randomNx2 = arc4random_uniform(201) + 40
@@ -114,7 +112,6 @@ class ViewController: UIViewController, subviewDelegate {
                 
                 
                 //fall
-                let randomN2 = arc4random_uniform(75) + 200
                 let randomN3 = arc4random_uniform(100) + 500
                 
                 self.dynamicItemBehavior.addItem(RandomCar)
