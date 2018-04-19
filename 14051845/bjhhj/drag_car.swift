@@ -10,6 +10,8 @@ import UIKit
 
 class drag_car: UIImageView {
     
+    var myDelegate: subviewDelegate?
+    
     var startLocation: CGPoint?
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -24,6 +26,7 @@ class drag_car: UIImageView {
         let dy = currentLocation!.y - startLocation!.y
         
         self.center = CGPoint(x:self.center.x+dx, y:self.center.y+dy)
-
-}
+        
+        self.myDelegate?.changeSomething()
+    }
 }

@@ -15,21 +15,42 @@ protocol subviewDelegate {
 
 class ViewController: UIViewController, subviewDelegate {
     
+    
+    
+    
+    
+    
     func changeSomething() {
         collisionBehavior.addBoundary(withIdentifier: "barrier" as
             NSCopying, for: UIBezierPath(rect: carView0.frame))
     }
+    
+    
+
+    let gameover = UIImageView(image: nil)
+    let button = UIButton(frame: CGRect(x: 300, y: 500, width: 80, height: 50))
+    
     
     var collisionBehavior: UICollisionBehavior!
     var dynamicAnimator: UIDynamicAnimator!
     var dynamicItemBehavior: UIDynamicItemBehavior!
     var dynamicBehavior: UIDynamicBehavior!
     
+    var playerscore = 0;
+    var allcars: [UIImageView] = []
+    
+   
+    
+    @IBAction func button(_ sender: UIButton) {
+    }
+    
+    
+    
     @IBOutlet weak var roadImage: UIImageView!
     
     @IBOutlet weak var carView0: drag_car!
     
-    var fallcars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+    var fallcars = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
 
    
 
@@ -64,8 +85,11 @@ class ViewController: UIViewController, subviewDelegate {
         roadImage.image = UIImage.animatedImage(with: imageArray, duration: 1)
         
         
+        
+        self.dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
+        self.dynamicItemBehavior = UIDynamicItemBehavior(items: [])
         // Random Cars
-        for obstacle in 0...19{
+        for obstacle in 0...20{
            let delay1 = Double(self.fallcars[obstacle])
             let delay = DispatchTime.now() + delay1
             DispatchQueue.main.asyncAfter(deadline: delay) {
@@ -91,12 +115,11 @@ class ViewController: UIViewController, subviewDelegate {
                 
                 //fall
                 let randomN2 = arc4random_uniform(75) + 200
-                let randomN3 = arc4random_uniform(75) + 200
+                let randomN3 = arc4random_uniform(100) + 500
                 
                 self.dynamicItemBehavior.addItem(RandomCar)
-                self.dynamicAnimator = UIDynamicAnimator(referenceView: self.view)
-                self.dynamicItemBehavior = UIDynamicItemBehavior(items: [RandomCar])
-                self.dynamicItemBehavior.addLinearVelocity(CGPoint(x: 0, y: 500), for: RandomCar)
+                
+                self.dynamicItemBehavior.addLinearVelocity(CGPoint(x: 0, y: Int(randomN3)), for: RandomCar)
                 
                 
                 //Collision
@@ -126,6 +149,22 @@ class ViewController: UIViewController, subviewDelegate {
         
         
         }
+        
+        
+        
+        
+        let when = DispatchTime.now() + 20
+        
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! endViewController
+            self.present(vc, animated: false, completion: nil)
+            
+            
+        }
+        
+        
+        
         
     }
         

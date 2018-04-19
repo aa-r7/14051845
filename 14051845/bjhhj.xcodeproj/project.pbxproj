@@ -36,6 +36,15 @@
 		843CDA0E2079419E005EE25E /* road19.png in Resources */ = {isa = PBXBuildFile; fileRef = 843CDA0B2079419E005EE25E /* road19.png */; };
 		843CDA1020796751005EE25E /* car0.png in Resources */ = {isa = PBXBuildFile; fileRef = 843CDA0F20796751005EE25E /* car0.png */; };
 		843CDA1220796AF1005EE25E /* drag_car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843CDA1120796AF1005EE25E /* drag_car.swift */; };
+		84A62DC32089018700D9ECF5 /* endViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A62DC22089018700D9ECF5 /* endViewController.swift */; };
+		84D4B2CE2082AC9000E29E0C /* car3.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B2C82082AC8F00E29E0C /* car3.png */; };
+		84D4B2CF2082AC9000E29E0C /* car2.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B2C92082AC8F00E29E0C /* car2.png */; };
+		84D4B2D02082AC9000E29E0C /* car4.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B2CA2082AC8F00E29E0C /* car4.png */; };
+		84D4B2D12082AC9000E29E0C /* car1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B2CB2082AC8F00E29E0C /* car1.png */; };
+		84D4B2D22082AC9000E29E0C /* car6.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B2CC2082AC8F00E29E0C /* car6.png */; };
+		84D4B2D32082AC9000E29E0C /* car5.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B2CD2082AC9000E29E0C /* car5.png */; };
+		84DD963E2083F2A300BC6D22 /* game_over.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84DD963D2083F2A300BC6D22 /* game_over.jpg */; };
+		84DD96402083F30600BC6D22 /* replay.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DD963F2083F30600BC6D22 /* replay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +100,15 @@
 		843CDA0B2079419E005EE25E /* road19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = road19.png; path = ../../../../Downloads/images/road19.png; sourceTree = "<group>"; };
 		843CDA0F20796751005EE25E /* car0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car0.png; path = ../../../../Downloads/images/car0.png; sourceTree = "<group>"; };
 		843CDA1120796AF1005EE25E /* drag_car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drag_car.swift; sourceTree = "<group>"; };
+		84A62DC22089018700D9ECF5 /* endViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endViewController.swift; sourceTree = "<group>"; };
+		84D4B2C82082AC8F00E29E0C /* car3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car3.png; path = images/car3.png; sourceTree = SOURCE_ROOT; };
+		84D4B2C92082AC8F00E29E0C /* car2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car2.png; path = images/car2.png; sourceTree = SOURCE_ROOT; };
+		84D4B2CA2082AC8F00E29E0C /* car4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car4.png; path = images/car4.png; sourceTree = SOURCE_ROOT; };
+		84D4B2CB2082AC8F00E29E0C /* car1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car1.png; path = images/car1.png; sourceTree = SOURCE_ROOT; };
+		84D4B2CC2082AC8F00E29E0C /* car6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car6.png; path = images/car6.png; sourceTree = SOURCE_ROOT; };
+		84D4B2CD2082AC9000E29E0C /* car5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = car5.png; path = images/car5.png; sourceTree = SOURCE_ROOT; };
+		84DD963D2083F2A300BC6D22 /* game_over.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = game_over.jpg; path = images/game_over.jpg; sourceTree = SOURCE_ROOT; };
+		84DD963F2083F30600BC6D22 /* replay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = replay.png; path = images/replay.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,13 +159,16 @@
 		843CD9B820791638005EE25E /* bjhhj */ = {
 			isa = PBXGroup;
 			children = (
+				843CDA1120796AF1005EE25E /* drag_car.swift */,
 				843CD9B920791638005EE25E /* AppDelegate.swift */,
 				843CD9BB20791638005EE25E /* ViewController.swift */,
-				843CDA1120796AF1005EE25E /* drag_car.swift */,
+				84A62DC22089018700D9ECF5 /* endViewController.swift */,
 				843CD9BD20791638005EE25E /* Main.storyboard */,
 				843CD9C020791638005EE25E /* Assets.xcassets */,
 				843CD9C220791638005EE25E /* LaunchScreen.storyboard */,
 				843CD9C520791638005EE25E /* Info.plist */,
+				84DD963F2083F30600BC6D22 /* replay.png */,
+				84DD963D2083F2A300BC6D22 /* game_over.jpg */,
 				843CDA0F20796751005EE25E /* car0.png */,
 				843CD9F1207918F8005EE25E /* road1.png */,
 				843CD9F0207918F8005EE25E /* road2.png */,
@@ -169,6 +190,12 @@
 				843CDA092079419D005EE25E /* road18.png */,
 				843CDA0B2079419E005EE25E /* road19.png */,
 				843CDA0A2079419D005EE25E /* road20.png */,
+				84D4B2CB2082AC8F00E29E0C /* car1.png */,
+				84D4B2C92082AC8F00E29E0C /* car2.png */,
+				84D4B2C82082AC8F00E29E0C /* car3.png */,
+				84D4B2CA2082AC8F00E29E0C /* car4.png */,
+				84D4B2CD2082AC9000E29E0C /* car5.png */,
+				84D4B2CC2082AC8F00E29E0C /* car6.png */,
 			);
 			path = bjhhj;
 			sourceTree = "<group>";
@@ -300,19 +327,25 @@
 			files = (
 				843CD9FE207918F9005EE25E /* road8.png in Resources */,
 				843CDA02207918F9005EE25E /* road1.png in Resources */,
+				84D4B2D02082AC9000E29E0C /* car4.png in Resources */,
 				843CDA05207918F9005EE25E /* road6.png in Resources */,
 				843CDA06207918F9005EE25E /* road7.png in Resources */,
 				843CD9C420791638005EE25E /* LaunchScreen.storyboard in Resources */,
 				843CDA0E2079419E005EE25E /* road19.png in Resources */,
+				84D4B2CE2082AC9000E29E0C /* car3.png in Resources */,
 				843CDA0D2079419E005EE25E /* road20.png in Resources */,
 				843CDA00207918F9005EE25E /* road12.png in Resources */,
+				84DD96402083F30600BC6D22 /* replay.png in Resources */,
 				843CD9F9207918F9005EE25E /* road16.png in Resources */,
 				843CD9FF207918F9005EE25E /* road10.png in Resources */,
+				84D4B2CF2082AC9000E29E0C /* car2.png in Resources */,
 				843CD9C120791638005EE25E /* Assets.xcassets in Resources */,
 				843CDA07207918F9005EE25E /* road9.png in Resources */,
 				843CD9FD207918F9005EE25E /* road14.png in Resources */,
 				843CDA08207918F9005EE25E /* road5.png in Resources */,
+				84D4B2D22082AC9000E29E0C /* car6.png in Resources */,
 				843CDA01207918F9005EE25E /* road2.png in Resources */,
+				84DD963E2083F2A300BC6D22 /* game_over.jpg in Resources */,
 				843CD9FA207918F9005EE25E /* road3.png in Resources */,
 				843CDA0C2079419E005EE25E /* road18.png in Resources */,
 				843CDA1020796751005EE25E /* car0.png in Resources */,
@@ -320,7 +353,9 @@
 				843CDA04207918F9005EE25E /* road17.png in Resources */,
 				843CDA03207918F9005EE25E /* road15.png in Resources */,
 				843CD9FC207918F9005EE25E /* road11.png in Resources */,
+				84D4B2D32082AC9000E29E0C /* car5.png in Resources */,
 				843CD9F8207918F9005EE25E /* road13.png in Resources */,
+				84D4B2D12082AC9000E29E0C /* car1.png in Resources */,
 				843CD9FB207918F9005EE25E /* road4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A62DC32089018700D9ECF5 /* endViewController.swift in Sources */,
 				843CD9BC20791638005EE25E /* ViewController.swift in Sources */,
 				843CD9BA20791638005EE25E /* AppDelegate.swift in Sources */,
 				843CDA1220796AF1005EE25E /* drag_car.swift in Sources */,
@@ -521,7 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "AA-R7.bjhhj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -536,7 +572,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "AA-R7.bjhhj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

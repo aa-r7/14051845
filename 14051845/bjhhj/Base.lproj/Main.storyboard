@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wsf-62-xtN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,36 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="dCq-vy-0Jm">
+            <objects>
+                <viewController id="Wsf-62-xtN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ejo-zZ-6cd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fl-Fi-EOB">
+                                <rect key="frame" x="106" y="277" width="163" height="113"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="START GAME">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="button:" destination="dJV-st-DYI" eventType="touchUpInside" id="W3c-GI-PwN"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="MKb-Xi-b8a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Xhz-RQ-YgE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4w5-Qu-gya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dJV-st-DYI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="890.39999999999998" y="129.98500749625188"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bjhhj" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,29 +48,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2l-DG-iDU">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f2l-DG-iDU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car0.png" translatesAutoresizingMaskIntoConstraints="NO" id="mHj-eB-vRU" customClass="drag_car" customModule="bjhhj">
-                                <rect key="frame" x="163" y="561" width="48" height="86"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car0.png" translatesAutoresizingMaskIntoConstraints="NO" id="vaW-27-ajK" customClass="drag_car" customModule="bjhhj" customModuleProvider="target">
+                                <rect key="frame" x="162" y="453" width="50" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.74704362251876899" green="1" blue="0.53504291677789251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="f2l-DG-iDU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Guu-hb-zW5"/>
+                            <constraint firstItem="f2l-DG-iDU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RGE-L2-GB7"/>
+                            <constraint firstItem="f2l-DG-iDU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eDb-MC-BLi"/>
+                            <constraint firstItem="f2l-DG-iDU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gJL-9S-at6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="YIy-8W-FGY"/>
                     <connections>
-                        <outlet property="carview0" destination="mHj-eB-vRU" id="oRV-C2-sCk"/>
+                        <outlet property="carView0" destination="vaW-27-ajK" id="VZf-hA-hb9"/>
                         <outlet property="roadImage" destination="f2l-DG-iDU" id="Zg1-JG-mCz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133.59999999999999" y="131.78410794602701"/>
+            <point key="canvasLocation" x="1694" y="130"/>
+        </scene>
+        <!--End View Controller-->
+        <scene sceneID="Ad3-Gd-hnM">
+            <objects>
+                <viewController storyboardIdentifier="endGame" id="BbV-pt-io0" customClass="endViewController" customModule="bjhhj" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dyX-zJ-awn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="game_over.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-qy-Shw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="274"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azT-xh-sqn">
+                                <rect key="frame" x="137" y="393" width="100" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="replay"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="6Nj-G9-D6R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoN-PV-hjV">
+                                <rect key="frame" x="132" y="309" width="105" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="Wsf-62-xtN" kind="show" id="48W-1P-rek"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Muo-eH-iB4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPl-CH-l6n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2389.5999999999999" y="127.28635682158921"/>
         </scene>
     </scenes>
     <resources>
         <image name="car0.png" width="382" height="757"/>
+        <image name="game_over.jpg" width="450" height="338"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6Nj-G9-D6R"/>
+    </inferredMetricsTieBreakers>
 </document>
